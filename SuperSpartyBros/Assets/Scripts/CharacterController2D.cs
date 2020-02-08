@@ -19,6 +19,10 @@ public class CharacterController2D : MonoBehaviour {
 	// Transform just below feet for checking if player is grounded
 	public Transform groundCheck;
 
+    //Reference to the Platform mover
+    //private PlatformMover _movingPlatform;
+
+
 	// player can move?
 	// we want this public so other scripts can access it but we don't want to show in editor as it might confuse designer
 	[HideInInspector]
@@ -47,6 +51,7 @@ public class CharacterController2D : MonoBehaviour {
 	bool facingRight = true;
 	bool isGrounded = false;
 	bool isRunning = false;
+    bool canDoubleJump = false;
 
 	// store the layer the player is on (setup in Awake)
 	int _playerLayer;
@@ -107,20 +112,28 @@ public class CharacterController2D : MonoBehaviour {
 		// Check to see if character is grounded by raycasting from the middle of the player
 		// down to the groundCheck position and see if collected with gameobjects on the
 		// whatIsGround layer
-		isGrounded = Physics2D.Linecast(_transform.position, groundCheck.position, whatIsGround);  
+		isGrounded = Physics2D.Linecast(_transform.position, groundCheck.position, whatIsGround);
+
+        //allow double jump after grounded
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+        }
 
 		// Set the grounded animation states
 		_animator.SetBool("Grounded", isGrounded);
 
 		if(isGrounded && Input.GetButtonDown("Jump")) // If grounded AND jump button pressed, then allow the player to jump
 		{
-			// reset current vertical motion to 0 prior to jump
-			_vy = 0f;
-			// add a force in the up direction
-			_rigidbody.AddForce (new Vector2 (0, jumpForce));
-			// play the jump sound
-			PlaySound(jumpSFX);
+            DoJump();
 		}
+
+        else if(canDoubleJump && Input.GetButtonDown("Jump")) //If can Double Jump and Jump button pressed, then allow player to double jump
+        {
+            DoJump();
+            //disable double jump after jumping since you can only do it once. 
+            canDoubleJump = false;
+        }
 	
 		// If the player stops jumping mid jump and player is not yet falling
 		// then set the vertical velocity to 0 (he will start to fall from gravity)
@@ -180,7 +193,19 @@ public class CharacterController2D : MonoBehaviour {
 		{
 			this.transform.parent = null;
 		}
-	}
+        //_rigidbody.AddForce(new Vector2(5.0f, 0));
+    }
+
+    //make player jump
+    void DoJump()
+    {
+        // reset current vertical motion to 0 prior to jump
+        _vy = 0f;
+        // add a force in the up direction
+        _rigidbody.AddForce(new Vector2(0, jumpForce));
+        // play the jump sound
+        PlaySound(jumpSFX);
+    }
 
 	// do what needs to be done to freeze the player
  	void FreezeMotion() {
@@ -268,4 +293,9 @@ public class CharacterController2D : MonoBehaviour {
 		_transform.position = spawnloc;
 		_animator.SetTrigger("Respawn");
 	}
+
+    public void EnemyBounce()
+    {
+        DoJump();
+    }
 }
