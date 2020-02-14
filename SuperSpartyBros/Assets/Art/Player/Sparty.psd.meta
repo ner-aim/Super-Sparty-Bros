@@ -15,11 +15,11 @@ TextureImporter:
     21300020: Sparty_SS_3
     21300022: Sparty_SS_4
     21300024: Sparty_SS_5
-    21300026: Sparty_Idle_1
-    21300028: Sparty_Idle_2
-    21300030: Sparty_Run_1
-    21300032: Sparty_Run_2
-    21300034: Sparty_Run_3
+    21300026: Sparty_Idle1
+    21300028: Sparty_Idle2
+    21300030: Sparty_Walk1
+    21300032: Sparty_Walk2
+    21300034: Sparty_Walk3
     21300036: Sparty_Jump
   externalObjects: {}
   serializedVersion: 9
@@ -92,29 +92,18 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 128
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 1
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sparty_Idle_1
+      name: Sparty_Idle1
       rect:
         serializedVersion: 2
         x: 0
@@ -126,15 +115,15 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9c1a0debdc6a71e47848c489c6dff302
+      spriteID: 79141347a2808334ab30c4e313a810fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sparty_Idle_2
+      name: Sparty_Idle2
       rect:
         serializedVersion: 2
         x: 16
@@ -146,15 +135,15 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cce80376e3731e14db940d55579bbec0
+      spriteID: 7b67ee3f56ea253448d4d6fe655fa88f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sparty_Run_1
+      name: Sparty_Walk1
       rect:
         serializedVersion: 2
         x: 32
@@ -166,15 +155,15 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 7df4dd2c96243144794f3de9ce64404f
+      spriteID: d0c152a84663b1c4a9eacbd140ea571c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sparty_Run_2
+      name: Sparty_Walk2
       rect:
         serializedVersion: 2
         x: 48
@@ -186,15 +175,15 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f25b344ac5dc22d4b9467d0669bf089b
+      spriteID: c9516521b548c334ab1cc0e7b6f49eff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sparty_Run_3
+      name: Sparty_Walk3
       rect:
         serializedVersion: 2
         x: 64
@@ -206,9 +195,9 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 33c4819f6c38b454697a5210cdac8983
+      spriteID: f45a427f6ff3e45439864a4223886d80
       vertices: []
       indices: 
       edges: []
@@ -226,9 +215,9 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e41e12ce962f5c94aa0f0bb38039e400
+      spriteID: 3bc0ecc84ed082e448428c362010419c
       vertices: []
       indices: 
       edges: []
@@ -236,13 +225,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1d4627e6abafa884a914926473f6d94b
+    spriteID: 
     vertices: []
     indices: 
     edges: []
     weights: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 

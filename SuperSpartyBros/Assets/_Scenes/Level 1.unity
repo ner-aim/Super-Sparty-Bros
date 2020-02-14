@@ -1181,8 +1181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c2c13247608f943a4959c890fbec13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelAfterVictory: 
-  levelAfterGameOver: 
+  levelAfterVictory: GameWin
+  levelAfterGameOver: GameLose
   score: 0
   highscore: 0
   startLives: 3
@@ -3058,7 +3058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 35, y: -5}
+  m_AnchoredPosition: {x: 5, y: -5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1549477652
